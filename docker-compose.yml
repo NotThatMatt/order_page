@@ -3,8 +3,6 @@ version: '3'
 services:
    php7-with-oci8:
      image: progaming/php-oci
-     links:
-      - oracledb
      volumes:
       - ./www:/var/www/html
      ports:
