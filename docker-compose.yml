@@ -1,16 +1,8 @@
 version: '3'
 
 services:
-   oracledb:
-     image: oracleinanutshell/oracle-xe-11g
-     restart: always
-     ports:
-      - "1521:1521"
-
    php7-with-oci8:
-     depends_on:
-       - oracledb
-     image: adrianharabula/php7-with-oci8
+     image: progaming/php-oci
      links:
       - oracledb
      volumes:
