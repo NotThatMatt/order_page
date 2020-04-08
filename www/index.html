@@ -1,11 +1,205 @@
+
+
 <html>
-    <form name="myForm" action="/insert.php" method="post"><!--Form-->
-        <fieldset>
-            <label class ="label1" for "name">Full Name: </label>
-            <input type="text" name="fname"><br />
-            <label for="email">E-mail Address: </label><input type="text" name="email"><br />
-        </fieldset>
-        <fieldset><input class="button" type="submit" value="Submit"/>
-        </fieldset>
-        </form>
+    <head>
+        <style>
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          max-width: 300px;
+          margin: auto;
+          text-align: center;
+          font-family: arial;
+        }
+        
+        .price {
+          color: grey;
+          font-size: 22px;
+        }
+        
+        .card button {
+          border: none;
+          outline: 0;
+          padding: 12px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+          font-size: 18px;
+        }
+        
+        .card button:hover {
+          opacity: 0.7;
+        }
+
+.form-style-2{
+	max-width: 500px;
+	padding: 20px 12px 10px 20px;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-2-heading{
+	font-weight: bold;
+	font-style: italic;
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 20px;
+	font-size: 15px;
+	padding-bottom: 3px;
+}
+.form-style-2 label{
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+.form-style-2 label > span{
+	width: 100px;
+	font-weight: bold;
+	float: left;
+	padding-top: 8px;
+	padding-right: 5px;
+}
+.form-style-2 span.required{
+	color:red;
+}
+.form-style-2 .tel-number-field{
+	width: 40px;
+	text-align: center;
+}
+.form-style-2 input.input-field, .form-style-2 .select-field{
+	width: 48%;	
+}
+.form-style-2 input.input-field, 
+.form-style-2 .tel-number-field, 
+.form-style-2 .textarea-field, 
+ .form-style-2 .select-field{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+	outline: none;
+}
+.form-style-2 .input-field:focus, 
+.form-style-2 .tel-number-field:focus, 
+.form-style-2 .textarea-field:focus,  
+.form-style-2 .select-field:focus{
+	border: 1px solid #0C0;
+}
+.form-style-2 .textarea-field{
+	height:100px;
+	width: 55%;
+}
+.form-style-2 input[type=submit],
+.form-style-2 input[type=button]{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: #FF8500;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.form-style-2 input[type=submit]:hover,
+.form-style-2 input[type=button]:hover{
+	background: #EA7B00;
+	color: #fff;
+}
+.hidden {
+    display: none;
+}
+.center {
+  text-align: center;
+  border: 3px solid orange;
+}
+
+        </style>
+        <script>
+            function AddToCart(id) {
+              var x = document.getElementById(id);
+              if (x.innerHTML === "Add to Cart") {
+                x.innerHTML = "In Your Cart!";
+                var p = document.getElementById("product["+id+"]");
+                p.checked=true;
+              } else {
+                x.innerHTML = "Add to Cart";
+                var p = document.getElementById("product["+id+"]");
+                p.checked=false;
+              }
+            }
+            function ResetCards(){
+              document.getElementById("13").innerHTML = "Add to Cart";
+              document.getElementById("15").innerHTML = "Add to Cart";
+              document.getElementById("18").innerHTML = "Add to Cart";
+              document.getElementById("19").innerHTML = "Add to Cart";
+              
+            }
+
+            function goBack() {
+                window.history.back()
+            }
+            </script>
+        </head>
+    
+            
+        <div class="center">
+          <p><h1>Welcome To The Octank Fashion!</h1></p>
+        </div>
+        
+
+        
+            <form name="myForm" action="/insert.php" method="post" onsubmit="this.submit(); this.reset(); ResetCards(); return false;">
+              <table align="center">
+                <tbody>
+                <tr>
+                <td><div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQksl1R_N09fKr-8KA7b6Yr7WoO-ADOOnlgxQuTDwV6-wyiqyrptr9i3PSWQ_na2GrYPgBGlRQ&usqp=CAc" width="274" height="300" alt="Red Coat" style="width:100%">
+                    <h2>Men's Red Coat</h2>
+                    <p class="price">$28.21</p>
+                    <p><button type="button" id=19 onClick="AddToCart(this.id)">Add to Cart</button></p>
+                  </div>
+                </td>
+                <td><div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTi0SJVKnUQzVPPHj0IrMB19DIoRhq5saPGVJW-xtcU8I6q-waA7cdBRECaRQd0vnDGtmYeGvZL&usqp=CAc" width="267" height="300" alt="Grey Hoodie" style="width:100%">
+                    <h2>Boy's Grey Hoodie</h2>
+                    <p class="price">$26.14</p>
+                    <p><button type="button" id=13 onClick="AddToCart(this.id)">Add to Cart</button></p>
+                  </div></td>
+                <td><div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRv1Ctpc_pidunENE_Cn3SCPtrKfwEOkZxFA8JNsQhBXpkP8fezEzb42DADWQ&usqp=CAc" width="263" height="300" alt="Grey Jacket" style="width:100%">
+                    <h2>Women's Grey Jacket</h2>
+                    <p class="price">$14.34</p>
+                    <p><button type="button" id=18 onClick="AddToCart(this.id)">Add to Cart</button></p>
+                  </div></td>
+                <td><div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR4Iq9HiRICtEGGBG3M04n5L67addlkPp52vVACq5L8WjcBQoFSg4KqtdiqPcYOvImu7KKH4Cux&usqp=CAc" width="300" height="300" alt="Blue Coat" style="width:100%">
+                    <h2>Girl's Blue Coat</h2>
+                    <p class="price">$13.09</p>
+                    <p><button type="button" id=15 onClick="AddToCart(this.id)">Add to Cart</button></p>
+                  </div></td>
+                </tr>
+                </tbody>
+                </table>
+    
+            <div class="form-style-2">
+                <div class="form-style-2-heading">Provide your information</div>
+                  <label for="fname"><span>Full Name</span><input type="text" class="input-field" name="fname" value="" /></label>
+                  <label for="email"><span>Email</span></span><input type="text" class="input-field" name="email" value="" /></label>
+                  <label><span> </span><input type="submit" value="Place Order" /></label>
+                  
+                  <input type="checkbox" id="product[19]" name="product[19]" value="19" class="hidden"/>
+                  <input type="checkbox" id="product[13]" name="product[13]" value="13" class="hidden"/> 
+                  <input type="checkbox" id="product[18]" name="product[18]"value="18" class="hidden" />
+                  <input type="checkbox" id="product[15]" name="product[15]"value="15" class="hidden" />
+            </div>
+
+          </form>
+
+        
 </html>
