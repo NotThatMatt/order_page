@@ -67,7 +67,7 @@ if($whichdb==1){
         $unitprice = $row[0];
 
         
-        $result = pg_query($db_connection, "INSERT INTO ORDER_ITEMS VALUES ($orderid, $lineitemid, $value, $unitprice, $quantity)");
+        $result = pg_query($db_connection, "INSERT INTO ORDER_ITEMS VALUES ($orderid, $lineitemid, $productid, $unitprice, $quantity)");
         $row = pg_fetch_row($result);
     }
         
