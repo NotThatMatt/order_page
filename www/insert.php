@@ -9,7 +9,7 @@ $product = count($productid);
 
 if($whichdb==1){
     // ******************************************
-    // POSTGRES
+    // If you are using POSTGRES 
     // ******************************************
 
     // postgres connection
@@ -79,7 +79,7 @@ if($whichdb==1){
 else {
 
     // ******************************************
-    // ORACLE
+    // otherwise use ORACLE
     // ******************************************
 
 
